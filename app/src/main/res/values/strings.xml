@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Touch Star</string>
+    <string name="new_game">NEW GAME</string>
+    <string name="options">OPTIONS</string>
+    <string name="top_score">TOP 5</string>
+    <string name="instructions">INSTRUCTION</string>
+    <string name="exit">EXIT</string>
+</resources>

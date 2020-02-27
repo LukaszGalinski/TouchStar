@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    >
+
+    <ImageView
+        android:id="@+id/bigStar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_star_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/starLeft"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_star_black_24dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/bigStar"
+        app:layout_constraintEnd_toStartOf="@id/bigStar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/starRight"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_star_black_24dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/bigStar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bigStar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+
+        android:textSize="50sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bigStar" />
+
+    <Button
+        android:id="@+id/newgame"
+        style="@style/ButtonMenu"
+        android:text="@string/new_game"
+        android:onClick="menuOptionsListener"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appNameText"/>
+
+    <Button
+        android:id="@+id/topScore"
+        style="@style/ButtonMenu"
+        android:text="@string/top_score"
+        android:onClick="menuOptionsListener"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newgame" />
+
+    <Button
+        android:id="@+id/options"
+        style="@style/ButtonMenu"
+        android:text="@string/options"
+        android:onClick="menuOptionsListener"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topScore" />
+
+    <Button
+        android:id="@+id/instruction"
+        style="@style/ButtonMenu"
+        android:text="@string/instructions"
+        android:onClick="menuOptionsListener"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/options" />
+
+    <Button
+        android:id="@+id/exit"
+        style="@style/ButtonMenu"
+        android:text="@string/exit"
+        android:onClick="menuOptionsListener"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instruction" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
