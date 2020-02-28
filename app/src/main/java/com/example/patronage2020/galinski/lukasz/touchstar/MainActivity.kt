@@ -19,9 +19,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
                 startActivity(Intent(this, NewGame::class.java))
             }
-            R.id.topScore ->{
-                println("Options")
-            }
+            R.id.topScore -> println("Options")
         }
     }
 }

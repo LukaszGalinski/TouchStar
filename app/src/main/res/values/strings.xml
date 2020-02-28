@@ -3,6 +3,14 @@
     <string name="new_game">NEW GAME</string>
     <string name="options">OPTIONS</string>
     <string name="top_score">TOP 5</string>
-    <string name="instructions">INSTRUCTION</string>
+    <string name="instructions">INSTRUCTIONS</string>
     <string name="exit">EXIT</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="level_finished">LEVEL FINISHED</string>
+    <string name="lives">Your Lives</string>
+    <string name="back">Back</string>
+    <string name="instruction_info">The purpose of this game is to get score as high as possible.
+    Each stage is getting harder and gives more points.
+
+    Your task is to touch every star with </string>
 </resources>
