@@ -9,8 +9,7 @@
     <string name="level_finished">LEVEL FINISHED</string>
     <string name="lives">Your Lives</string>
     <string name="back">Back</string>
-    <string name="instruction_info">The purpose of this game is to get score as high as possible.
-    Each stage is getting harder and gives more points.
-
-    Your task is to touch every star with </string>
+    <string name="instruction_info">The goal of the game is to get the score as high as possible.
+    Stages are getting harder and brings more points.\nYour task is to touch stars which will fall down on the screen.\n</string>
+    <string name="select_image">Select Falling Object</string>
 </resources>

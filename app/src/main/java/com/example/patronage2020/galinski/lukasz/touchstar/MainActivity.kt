@@ -13,13 +13,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun menuOptionsListener(v: View){
-        when (v.id){
-            R.id.newgame -> {
-                finish()
-                startActivity(Intent(this, NewGame::class.java))
-            }
-            R.id.topScore -> println("Options")
+    fun menuOptionsListener(v: View) {
+        when (v.id) {
+            R.id.newgame -> startActivity(Intent(this, NewGame::class.java))
+            R.id.topScore -> println("")
+            R.id.options -> startActivity(Intent(this, Options::class.java))
+            R.id.instruction -> startActivity(Intent(this, Instructions::class.java))
+            R.id.exit -> finish()
         }
     }
 }
