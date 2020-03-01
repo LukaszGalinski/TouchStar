@@ -22,6 +22,7 @@
             android:configChanges="orientation|keyboardHidden|keyboard"/>
         <activity android:name=".Instructions" />
         <activity android:name=".Options" />
+        <activity android:name=".Level2" />
     </application>
 
 </manifest>
