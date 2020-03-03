@@ -2,7 +2,6 @@ package com.example.patronage2020.galinski.lukasz.touchstar
 
 
 import android.animation.ObjectAnimator
-import android.content.DialogInterface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -22,12 +21,10 @@ private const val DELAY_DURATION = 500L
 private const val DECREASE_STARS_SPAWN_AREA_WIDTH = 100     //Secure stars spawning in the outside of the screen
 private const val DECREASE_STARS_SPAWN_AREA_HEIGHT = 50
 private const val LIVES = 3
-private const val SCORE_PER_STAR = 15
 private const val STARS_AMOUNT = 21
 private const val STAR_SIZE_SCALE = 1.8F
 private const val STAR_BASIC_SPAWN_TIME = 1000L
 private const val ANIMATION_NAME = "translationY"
-
 private var deviceHeight = 0
 private var deviceWidth = 0
 private var starsCounter = 0
@@ -36,7 +33,6 @@ private var currentScore = 0
 private var currentSign = 0
 private val waitToCheck = Handler()
 lateinit var mainHandler:Handler
-
 
 class NewGame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +46,7 @@ class NewGame : AppCompatActivity() {
         getDeviceResolution()
         waitToCheck.postDelayed({
             starCreatingWithDelay()
-        }, startTextLength * GAME_START_CHARACTER_SHOWTIME)
+        }, startTextCountdown)
     }
 
     private fun setUpInterface() {
@@ -86,29 +82,27 @@ class NewGame : AppCompatActivity() {
         anim.duration = FALLING_DURATION
         anim.startDelay = DELAY_DURATION * Math.random().toLong()
         anim.doOnEnd {
-            if (!checkLivesLeft()) {
+            if (!checkLivesLeft(currentLivesAmount, livesLeft)) {
                 stopTheGame(anim, switcher)
                 cancelAnimations()
                 switcher.setText(resources.getText(R.string.game_over))
+            } else {
+                currentLivesAmount--
             }
         }
         star.setOnClickListener {
             anim.removeAllListeners()
-            addScore()
+            currentScore = addScore(currentScore, score)
             star.visibility = View.GONE
         }
         anim.start()
         addAnimation(anim)
+
         if (starsCounter == STARS_AMOUNT) {
             stopTheGame(anim, switcher)
             cancelAnimations()
             switcher.setText(resources.getText(R.string.level_finished))
         }
-    }
-
-    private fun addScore() {
-        currentScore += SCORE_PER_STAR
-        score.text = currentScore.toString()
     }
 
     private fun getDeviceResolution() {
@@ -118,30 +112,20 @@ class NewGame : AppCompatActivity() {
         deviceWidth = displayMetrics.widthPixels - DECREASE_STARS_SPAWN_AREA_WIDTH
     }
 
-    private fun checkLivesLeft(): Boolean {
-        return if (currentLivesAmount > 0) {
-            currentLivesAmount--
-            livesLeft.text = currentLivesAmount.toString()
-            true
-        } else false
-    }
-
     override fun onBackPressed() {
         mainHandler.removeCallbacksAndMessages(null)
         pauseAnimations()
 
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setMessage("You will lose Data").setTitle("Are you sure?")
-            .setPositiveButton("STAY",
-                DialogInterface.OnClickListener { dialog, id ->
-                    dialog.cancel()
-                    resumeAnimations()
-                    starCreatingWithDelay()
-                })
-            .setNegativeButton("LEAVE",
-                DialogInterface.OnClickListener { dialog, id ->
-                    finish()
-                })
+            .setPositiveButton("STAY") { dialog, _ ->
+                dialog.cancel()
+                resumeAnimations()
+                starCreatingWithDelay()
+            }
+            .setNegativeButton("LEAVE") { _, _ ->
+                finish()
+            }
         val showDialog = dialogBuilder.create()
         showDialog.show()
     }

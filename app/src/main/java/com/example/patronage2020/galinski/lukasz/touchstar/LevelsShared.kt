@@ -4,17 +4,18 @@ import android.animation.Animator
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Handler
-import android.util.DisplayMetrics
 import android.view.View
 import android.widget.TextSwitcher
+import android.widget.TextView
 
-const val GAME_START_CHARACTER_SHOWTIME = 1000L
+private const val GAME_START_CHARACTER_SHOWTIME = 1000L
 private const val SHARED_SYMBOLS = "symbols"
 private const val SHARED_DEFAULT_SYMBOL_LABEL = "defaultSymbol"
+private const val SCORE_PER_STAR = 15
 private val handlerString = Handler()
 private val textToShow = arrayOf("3", "2", "1", "START")
-val startTextLength = textToShow.size
 private val mAnimatorList: MutableList<Animator> = ArrayList()
+val startTextCountdown = GAME_START_CHARACTER_SHOWTIME*textToShow.size
 
 fun changeDefaultSymbol(context: Context, currentSign: String){
     val shared: SharedPreferences = context.getSharedPreferences(SHARED_SYMBOLS, Context.MODE_PRIVATE)
@@ -57,6 +58,20 @@ fun startGameCountDown(startingGameShowText: Int, context: Context, switcher: Te
             startGameCountDown(++textCountDown, context, switcher)
         }
     }, GAME_START_CHARACTER_SHOWTIME)
+}
+
+fun checkLivesLeft(currentLivesAmount: Int, livesLeft: TextView): Boolean {
+    return if (currentLivesAmount > 0) {
+        livesLeft.text = currentLivesAmount.toString()
+        true
+    } else false
+}
+
+fun addScore(currentScore: Int, scoreTextView: TextView): Int {
+    var newScore = currentScore
+    newScore += SCORE_PER_STAR
+    scoreTextView.text = currentScore.toString()
+    return newScore
 }
 
 fun cancelAnimations(){
