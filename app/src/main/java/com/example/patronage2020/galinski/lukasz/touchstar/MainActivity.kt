@@ -11,17 +11,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val essa = DatabaseHandler(this)
-        val cos = DatabaseData("Jan", 1000, 2)
-        val cos2 = DatabaseData("Andrzej", 3000, 1)
-        essa.insertData(cos)
-        essa.insertData(cos2)
+   //     val essa = DatabaseHandler(this)
+    //    val cos = DatabaseData("Szymon", 5000, 5)
+   //     val cos2 = DatabaseData("Johny", 2500, 4)
+    //    essa.insertScore(cos)
+     //   essa.insertScore(cos2)
     }
 
     fun menuOptionsListener(v: View) {
         when (v.id) {
             R.id.newgame -> startActivity(Intent(this, NewGame::class.java))
-            R.id.topScore -> startActivity(Intent(this, ScoreListAdapter::class.java))
+            R.id.topScore -> startActivity(Intent(this, TopScore::class.java))
             R.id.options -> startActivity(Intent(this, Options::class.java))
             R.id.instruction -> startActivity(Intent(this, Instructions::class.java))
             R.id.exit -> finish()

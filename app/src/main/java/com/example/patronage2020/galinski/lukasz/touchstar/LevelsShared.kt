@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Handler
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextSwitcher
 import android.widget.TextView
 
@@ -15,6 +16,7 @@ private const val SCORE_PER_STAR = 15
 private val handlerString = Handler()
 private val textToShow = arrayOf("3", "2", "1", "START")
 private val mAnimatorList: MutableList<Animator> = ArrayList()
+private val starList: MutableList<ImageButton> = ArrayList()
 val startTextCountdown = GAME_START_CHARACTER_SHOWTIME*textToShow.size
 
 fun changeDefaultSymbol(context: Context, currentSign: String){
@@ -62,7 +64,7 @@ fun startGameCountDown(startingGameShowText: Int, context: Context, switcher: Te
 
 fun checkLivesLeft(currentLivesAmount: Int, livesLeft: TextView): Boolean {
     return if (currentLivesAmount > 0) {
-        livesLeft.text = currentLivesAmount.toString()
+        livesLeft.text = (currentLivesAmount-1).toString()
         true
     } else false
 }
@@ -70,7 +72,7 @@ fun checkLivesLeft(currentLivesAmount: Int, livesLeft: TextView): Boolean {
 fun addScore(currentScore: Int, scoreTextView: TextView): Int {
     var newScore = currentScore
     newScore += SCORE_PER_STAR
-    scoreTextView.text = currentScore.toString()
+    scoreTextView.text = newScore.toString()
     return newScore
 }
 
@@ -78,7 +80,6 @@ fun cancelAnimations(){
     for (i in mAnimatorList){
         i.cancel()
     }
-    mAnimatorList.clear()
 }
 
 fun pauseAnimations(){
@@ -91,6 +92,16 @@ fun resumeAnimations(){
         i.resume()
     }
 }
-fun addAnimation(animation: Animator){
+fun addAnimation(animation: Animator, star: ImageButton){
     mAnimatorList.add(animation)
+    starList.add(star)
+}
+
+fun destroyAnimations(){
+    for (i in mAnimatorList.indices){
+        mAnimatorList[i].cancel()
+        starList[i].isClickable = false
+    }
+
+
 }

@@ -6,4 +6,5 @@
     <color name="buttonColor">#E2333337</color>
     <color name="barColor">#230E97</color>
     <color name="yellowColor">#CBE4D786</color>
+    <color name="halfDark">#79000000</color>
 </resources>

@@ -18,8 +18,7 @@ private const val KEY_STAGE = "stage"
 
 class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableScore = ("CREATE TABLE " + TABLE_NAME + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_SCORE
-                + " LONG," + KEY_STAGE + " INTEGER" + ")")
+        val createTableScore = ("CREATE TABLE $TABLE_NAME ($KEY_ID INTEGER PRIMARY KEY, $KEY_NAME TEXT, $KEY_SCORE LONG, $KEY_STAGE INTEGER)")
         db?.execSQL(createTableScore)
     }
 
@@ -28,7 +27,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
         onCreate(db)
     }
 
-    fun insertData(data: DatabaseData): Long{
+    fun insertScore(data: DatabaseData): Long{
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(KEY_NAME, data.userName)
@@ -39,9 +38,9 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
         return addDataSuccess
     }
 
-    fun fetchData(): List<DatabaseData>{
+    fun fetchScore(): List<DatabaseData>{
         val scoreList: ArrayList<DatabaseData> = ArrayList()
-        val query = "SELECT * FROM $TABLE_NAME ORDER BY $KEY_SCORE LIMIT 5"
+        val query = "SELECT * FROM $TABLE_NAME ORDER BY $KEY_SCORE DESC LIMIT 5"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         try{
@@ -61,7 +60,6 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
                 score = cursor.getLong(cursor.getColumnIndex(KEY_SCORE))
                 stage = cursor.getInt(cursor.getColumnIndex(KEY_STAGE))
                 val data  = DatabaseData(userId, userName, score, stage)
-                println("data: " + data)
                 scoreList.add(data)
             }while (cursor.moveToNext())
         }

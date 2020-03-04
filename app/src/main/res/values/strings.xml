@@ -12,4 +12,17 @@
     <string name="instruction_info">The goal of the game is to get the score as high as possible.
     Stages are getting harder and brings more points.\nYour task is to touch stars which will fall down on the screen.\n</string>
     <string name="select_image">Select Falling Object</string>
+    <string name="leave_info">You will lose all of your progress. Do you really want to leave the game?</string>
+    <string name="stay_msg">STAY</string>
+    <string name="leave_msg">LEAVE</string>
+    <string name="leave_title">Are you sure?</string>
+    <string name="top_seven">TOP 7</string>
+
+    <string name="score_lp_label">LP</string>
+    <string name="score_name_label">NAME</string>
+    <string name="score_stage_label">STAGE</string>
+    <string name="score_score_label">SCORE</string>
+    <string name="save_score">SAVE</string>
+    <string name="enter_your_name">Your name (max 8 characters): </string>
+    <string name="username_rule">Your name must be in range from 0 to 8 characters length</string>
 </resources>
