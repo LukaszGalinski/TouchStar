@@ -64,16 +64,27 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/stage"
+    android:id="@+id/stage_label"
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+    android:gravity="center"
+    android:text="Stage:"
+    android:textColor="@android:color/white"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toStartOf="@+id/scoreLabel"
+    app:layout_constraintStart_toEndOf="@+id/livesLeft"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stage_score"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:gravity="center"
-        android:text="Stage: I"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/scoreLabel"
-        app:layout_constraintStart_toEndOf="@+id/livesLeft"
+        app:layout_constraintStart_toEndOf="@+id/stage_label"
         app:layout_constraintTop_toTopOf="parent" />
     <TextSwitcher
             android:id="@+id/switcher"

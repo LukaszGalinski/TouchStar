@@ -5,9 +5,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Handler
 import android.view.View
-import android.widget.ImageButton
-import android.widget.TextSwitcher
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 
 private const val GAME_START_CHARACTER_SHOWTIME = 1000L
 private const val SHARED_SYMBOLS = "symbols"
@@ -43,7 +42,7 @@ fun changeImageDependsOnLoadedData(sign: String?): Int {
 
 fun stopTheGame(animation: Animator, switcher: TextSwitcher ) {
     animation.removeAllListeners()
-    animation.cancel()
+    pauseAnimations()
     mainHandler.removeCallbacksAndMessages(null)
     switcher.visibility = View.VISIBLE
 }
@@ -99,9 +98,34 @@ fun addAnimation(animation: Animator, star: ImageButton){
 
 fun destroyAnimations(){
     for (i in mAnimatorList.indices){
-        mAnimatorList[i].cancel()
+        mAnimatorList[i].pause()
         starList[i].isClickable = false
+        starList[i].visibility = View.GONE
+        mAnimatorList[i].removeAllListeners()
+    }
+}
+fun enterNameDialog(context: Context, currentScore: Int, currentStage: Int){
+        val dialogBuilder = AlertDialog.Builder(context)
+        dialogBuilder.setTitle(R.string.enter_your_name)
+
+        val input = EditText(context)
+        dialogBuilder.setView(input)
+
+        dialogBuilder.setPositiveButton(R.string.save_score) { dialog, _ ->
+            val userName = input.text.toString()
+            if (nameValidation(userName)) {
+                val data = DatabaseData(userName, currentScore.toLong(), currentStage)
+                DatabaseHandler(context).insertScore(data)
+                dialog.cancel()
+            } else {
+                Toast.makeText(context, context.resources.getText(R.string.username_rule), Toast.LENGTH_SHORT).show()
+            }
+        }
+        val showDialog = dialogBuilder.create()
+        showDialog.show()
     }
 
-
+fun nameValidation(name: String): Boolean {
+    return name.length in 1..8
 }
+
