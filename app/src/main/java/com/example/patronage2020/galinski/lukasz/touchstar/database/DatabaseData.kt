@@ -1,4 +1,4 @@
-package com.example.patronage2020.galinski.lukasz.touchstar
+package com.example.patronage2020.galinski.lukasz.touchstar.database
 
 class DatabaseData(val userName: String, val score: Long, val stage: Int){
     var userId: Int = 0

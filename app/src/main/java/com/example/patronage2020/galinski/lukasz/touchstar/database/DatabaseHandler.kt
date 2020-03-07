@@ -1,4 +1,4 @@
-package com.example.patronage2020.galinski.lukasz.touchstar
+package com.example.patronage2020.galinski.lukasz.touchstar.database
 
 import android.content.ContentValues
 import android.content.Context
@@ -16,7 +16,10 @@ private const val KEY_SCORE = "score"
 private const val KEY_STAGE = "stage"
 
 
-class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DatabaseHandler(context: Context): SQLiteOpenHelper(context,
+    DATABASE_NAME, null,
+    DATABASE_VERSION
+) {
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableScore = ("CREATE TABLE $TABLE_NAME ($KEY_ID INTEGER PRIMARY KEY, $KEY_NAME TEXT, $KEY_SCORE LONG, $KEY_STAGE INTEGER)")
         db?.execSQL(createTableScore)
@@ -40,7 +43,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
 
     fun fetchScore(): List<DatabaseData>{
         val scoreList: ArrayList<DatabaseData> = ArrayList()
-        val query = "SELECT * FROM $TABLE_NAME ORDER BY $KEY_SCORE DESC LIMIT 5"
+        val query = "SELECT * FROM $TABLE_NAME ORDER BY $KEY_SCORE DESC LIMIT 7"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         try{
@@ -59,7 +62,13 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
                 userName = cursor.getString(cursor.getColumnIndex(KEY_NAME))
                 score = cursor.getLong(cursor.getColumnIndex(KEY_SCORE))
                 stage = cursor.getInt(cursor.getColumnIndex(KEY_STAGE))
-                val data  = DatabaseData(userId, userName, score, stage)
+                val data  =
+                    DatabaseData(
+                        userId,
+                        userName,
+                        score,
+                        stage
+                    )
                 scoreList.add(data)
             }while (cursor.moveToNext())
         }

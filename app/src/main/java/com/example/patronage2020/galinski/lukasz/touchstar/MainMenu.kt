@@ -4,18 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.patronage2020.galinski.lukasz.touchstar.mainmenu.Instructions
+import com.example.patronage2020.galinski.lukasz.touchstar.mainmenu.Options
+import com.example.patronage2020.galinski.lukasz.touchstar.mainmenu.TopScore
 
-class MainActivity : AppCompatActivity() {
+class MainMenu : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-   //     val essa = DatabaseHandler(this)
-    //    val cos = DatabaseData("Szymon", 5000, 5)
-   //     val cos2 = DatabaseData("Johny", 2500, 4)
-    //    essa.insertScore(cos)
-     //   essa.insertScore(cos2)
     }
 
     fun menuOptionsListener(v: View) {

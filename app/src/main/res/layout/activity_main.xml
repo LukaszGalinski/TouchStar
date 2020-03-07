@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/nie"
+    tools:context=".MainMenu"
+    android:background="@drawable/kosmos"
     >
 
     <ImageView
@@ -17,28 +17,6 @@
         android:src="@drawable/ic_star_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/starLeft"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@drawable/ic_star_black_24dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@id/bigStar"
-        app:layout_constraintEnd_toStartOf="@id/bigStar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/starRight"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@drawable/ic_star_black_24dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@id/bigStar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/bigStar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

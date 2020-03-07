@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -20,10 +20,10 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="nosensor"
             android:configChanges="orientation|keyboardHidden|keyboard"/>
-        <activity android:name=".Instructions" />
-        <activity android:name=".Options" />
+        <activity android:name=".mainmenu.Instructions" />
+        <activity android:name=".mainmenu.Options" />
         <activity android:name=".Level2" />
-        <activity android:name=".TopScore" />
+        <activity android:name=".mainmenu.TopScore" />
         <activity android:name=".Level2" />
     </application>
 

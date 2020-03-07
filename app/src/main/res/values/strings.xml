@@ -15,7 +15,7 @@
     <string name="leave_info">You will lose all of your progress. Do you really want to leave the game?</string>
     <string name="stay_msg">STAY</string>
     <string name="leave_msg">LEAVE</string>
-    <string name="leave_title">Are you sure?</string>
+    <string name="leave_title">Are you sure you want to exit?</string>
     <string name="top_seven">TOP 7</string>
 
     <string name="score_lp_label">LP</string>
