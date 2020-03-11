@@ -1,15 +1,11 @@
 package com.example.patronage2020.galinski.lukasz.touchstar
 
 import android.animation.Animator
-
 import android.view.View
 import android.widget.*
 
-private const val SCORE_PER_STAR = 15
 private val mAnimatorList: MutableList<Animator> = ArrayList()
 private val starList: MutableList<ImageButton> = ArrayList()
-
-
 
 fun stopTheGame(animation: Animator, switcher: TextSwitcher ) {
     animation.removeAllListeners()
@@ -23,11 +19,13 @@ fun pauseAnimations(){
         i.pause()
     }
 }
+
 fun resumeAnimations(){
     for (i in mAnimatorList){
         i.resume()
     }
 }
+
 fun addAnimationToList(animation: Animator, star: ImageButton){
     mAnimatorList.add(animation)
     starList.add(star)

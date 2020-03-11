@@ -3,6 +3,7 @@ package com.example.patronage2020.galinski.lukasz.touchstar
 import android.widget.*
 
 private const val SCORE_PER_STAR = 15
+
 fun checkLivesLeft(currentLivesAmount: Int, livesLeft: TextView): Boolean {
     return if (currentLivesAmount > 0) {
         livesLeft.text = (currentLivesAmount-1).toString()

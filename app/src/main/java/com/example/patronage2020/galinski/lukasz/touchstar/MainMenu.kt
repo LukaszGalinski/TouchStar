@@ -12,7 +12,7 @@ class MainMenu : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.main_menu)
     }
 
     fun menuOptionsListener(v: View) {

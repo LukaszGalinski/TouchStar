@@ -22,9 +22,8 @@
             android:configChanges="orientation|keyboardHidden|keyboard"/>
         <activity android:name=".mainmenu.Instructions" />
         <activity android:name=".mainmenu.Options" />
-        <activity android:name=".Level2" />
         <activity android:name=".mainmenu.TopScore" />
-        <activity android:name=".Level2" />
+
     </application>
 
 </manifest>

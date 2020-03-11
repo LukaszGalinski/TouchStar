@@ -2,7 +2,7 @@
     <string name="app_name">Touch Star</string>
     <string name="new_game">NEW GAME</string>
     <string name="options">OPTIONS</string>
-    <string name="top_score">TOP 5</string>
+    <string name="top_score">TOP 7</string>
     <string name="instructions">INSTRUCTIONS</string>
     <string name="exit">EXIT</string>
     <string name="game_over">GAME OVER</string>
@@ -17,6 +17,7 @@
     <string name="leave_msg">LEAVE</string>
     <string name="leave_title">Are you sure you want to exit?</string>
     <string name="top_seven">TOP 7</string>
+    <string name="switcher">switcher</string>
 
     <string name="score_lp_label">LP</string>
     <string name="score_name_label">NAME</string>
@@ -24,5 +25,14 @@
     <string name="score_score_label">SCORE</string>
     <string name="save_score">SAVE</string>
     <string name="enter_your_name">Your name (max 8 characters): </string>
+    <string name="your_name">Your name </string>
     <string name="username_rule">Your name must be in range from 0 to 8 characters length</string>
+
+    <string name="score">Score: </string>
+    <string name="stage">Stage: </string>
+    <string name="options_button_select">Select</string>
+
+    <string name="options_heart">Heart</string>
+    <string name="options_star">Star</string>
+    <string name="options_flower">Flower</string>
 </resources>

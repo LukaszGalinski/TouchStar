@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainMenu"
-    android:background="@drawable/kosmos"
-    >
+    android:background="@drawable/kosmos">
 
     <ImageView
         android:id="@+id/bigStar"
@@ -19,34 +18,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/starLeft"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@drawable/ic_star_black_24dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@id/bigStar"
-        app:layout_constraintEnd_toStartOf="@id/bigStar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/starRight"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@drawable/ic_star_black_24dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@id/bigStar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/bigStar"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/appNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="50sp"
+        android:text="@string/instructions"
+        android:textSize="@dimen/app_name"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,13 +33,12 @@
         android:id="@+id/instruction_info"
         style="@style/ButtonMenu"
         android:layout_width="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:textSize="18sp"
+        android:layout_marginStart="@dimen/basic_text_margin"
+        android:layout_marginEnd="@dimen/basic_text_margin"
+        android:padding="@dimen/basic_text_padding"
+        android:textSize="@dimen/basic_text_size"
         android:text="@string/instruction_info"
-        android:layout_marginTop="30dp"
         android:onClick="menuOptionsListener"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,5 +52,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/instruction_info" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

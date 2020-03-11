@@ -114,6 +114,7 @@ class NewGame : AppCompatActivity() {
                 go_next.visibility = View.VISIBLE
                 go_next.setOnClickListener {
                     endGameDialog(this, currentScore, currentStage)
+                    currentStage = 1
                 }
         } else {
             currentLivesAmount--
@@ -141,6 +142,7 @@ class NewGame : AppCompatActivity() {
                     startActivity(Intent(this, NewGame::class.java))
                 }else{
                     endGameDialog(this, currentScore, currentStage)
+                    currentStage = 1
                 }
             }
         }
@@ -156,6 +158,7 @@ class NewGame : AppCompatActivity() {
     override fun onBackPressed() {
         mainHandler.removeCallbacksAndMessages(null)
         switcherMoves.removeCallbacksAndMessages(null)
+        switcher.visibility = View.GONE
         pauseAnimations()
         val dialogView =
             LayoutInflater.from(this).inflate(R.layout.alertdialog_customview, null)
@@ -185,17 +188,18 @@ class NewGame : AppCompatActivity() {
                 currentScore = 0
                 delayDuration = BASIC_DELAY_DURATION
                 fallingDuration = BASIC_FALLING_DURATION
+                currentLivesAmount = LIVES
             }
             2 -> {
                 dynamicLayout.background = ContextCompat.getDrawable(this, R.drawable.egip)
-                view.background = ContextCompat.getDrawable(this, R.drawable.egip)
-                bottomBar.background = ContextCompat.getDrawable(this, R.drawable.egip)
+                view.setBackgroundColor(ContextCompat.getColor(this, R.color.level2_upper_bar))
+                bottomBar.setBackgroundColor(ContextCompat.getColor(this, R.color.level2_bottom_bar))
 
             }
             3 -> {
                 dynamicLayout.background = ContextCompat.getDrawable(this, R.drawable.egipt)
-                view.background = ContextCompat.getDrawable(this, R.drawable.egipt)
-                bottomBar.background = ContextCompat.getDrawable(this, R.drawable.egipt)
+                view.setBackgroundColor(ContextCompat.getColor(this, R.color.level3_upper_bar))
+                bottomBar.setBackgroundColor(ContextCompat.getColor(this, R.color.level3_bottom_bar))
             }
         }
         starsCounter = 0

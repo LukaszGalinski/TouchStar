@@ -5,6 +5,10 @@ import android.content.SharedPreferences
 
 private const val SHARED_SYMBOLS = "symbols"
 private const val SHARED_DEFAULT_SYMBOL_LABEL = "defaultSymbol"
+private const val STAR_LABEL = "starSymbol"
+private const val HEART_LABEL = "heartSymbol"
+private const val FLOWER_LABEL = "flowerSymbol"
+
 fun changeDefaultSymbol(context: Context, currentSign: String){
     val shared: SharedPreferences = context.getSharedPreferences(SHARED_SYMBOLS, Context.MODE_PRIVATE)
     val editor: SharedPreferences.Editor = shared.edit()
@@ -20,9 +24,9 @@ fun getDefaultSymbol(context: Context): Int {
 
 fun changeImageDependsOnLoadedData(sign: String?): Int {
     return when (sign){
-        "starSymbol" -> R.drawable.ic_star_black_24dp
-        "heartSymbol" -> R.drawable.ic_favorite_black_24dp
-        "flowerSymbol" -> R.drawable.ic_filter_vintage_black_24dp
+        STAR_LABEL -> R.drawable.ic_star_black_24dp
+        HEART_LABEL -> R.drawable.ic_favorite_black_24dp
+        FLOWER_LABEL -> R.drawable.ic_filter_vintage_black_24dp
         else -> R.drawable.ic_star_black_24dp
     }
 }

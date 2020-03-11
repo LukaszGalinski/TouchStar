@@ -10,7 +10,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/top_bar_height"
         android:background="@drawable/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,23 +19,23 @@
     <TextView
         android:id="@+id/livesLeft"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:textSize="30sp"
+        android:layout_height="@dimen/top_bar_height"
+        android:textSize="@dimen/top_bar_data_size"
         android:textStyle="bold"
         android:gravity="center"
         android:textAlignment="center"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="@dimen/top_bar_margin_start"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@id/lifeIcon"
         app:layout_constraintTop_toTopOf="parent"/>
     <ImageView
         android:id="@+id/lifeIcon"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/top_bar_height"
         android:layout_width="wrap_content"
         android:scaleX="1.2"
         android:scaleY="1.2"
         android:contentDescription="@string/lives"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/top_bar_margin_start"
         android:src="@drawable/ic_favorite_black_24dp"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -43,20 +43,20 @@
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/top_bar_height"
         android:gravity="center"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="@dimen/top_bar_margin_start"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="@dimen/top_bar_data_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/scoreLabel"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="Score: "
-        android:textSize="25sp"
+        android:layout_height="@dimen/top_bar_height"
+        android:text="@string/score"
+        android:textSize="@dimen/top_bar_data_size_medium"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@android:color/white"
@@ -66,11 +66,11 @@
     <TextView
     android:id="@+id/stage_label"
     android:layout_width="wrap_content"
-    android:layout_height="60dp"
+    android:layout_height="@dimen/top_bar_height"
     android:gravity="center"
-    android:text="Stage:"
+    android:text="@string/stage"
     android:textColor="@android:color/white"
-    android:textSize="25sp"
+    android:textSize="@dimen/top_bar_data_size_medium"
     android:textStyle="bold"
     app:layout_constraintEnd_toStartOf="@+id/scoreLabel"
     app:layout_constraintStart_toEndOf="@+id/livesLeft"
@@ -79,10 +79,10 @@
     <TextView
         android:id="@+id/stage_score"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/top_bar_height"
         android:gravity="center"
         android:textColor="@android:color/white"
-        android:textSize="25sp"
+        android:textSize="@dimen/top_bar_data_size_medium"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/stage_label"
         app:layout_constraintTop_toTopOf="parent" />
@@ -90,7 +90,7 @@
             android:id="@+id/switcher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
+            android:textSize="@dimen/switcher_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,27 +100,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="40sp"
-                android:padding="30dp"
+                android:textSize="@dimen/switcher_text_size"
+                android:padding="@dimen/switcher_text_padding"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="40sp"
-                android:padding="30dp"
+                android:textSize="@dimen/switcher_text_size"
+                android:padding="@dimen/switcher_text_padding"
                 android:textStyle="bold"/>
-
         </TextSwitcher>
 
     <ImageButton
         android:id="@+id/go_next"
-        android:layout_width="35dp"
-        android:layout_height="24dp"
-        android:background="@color/halfDark"
+        android:layout_width="@dimen/next_level_sign"
+        android:layout_height="@dimen/next_level_sign"
+        android:background="@android:color/transparent"
         android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
         android:scaleX="3"
         android:scaleY="3"
+        android:contentDescription="@string/switcher"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,7 @@
     <View
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/top_bar_height"
         android:background="@drawable/bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

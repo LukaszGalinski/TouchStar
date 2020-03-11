@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,9 +11,9 @@
 
     <ImageView
         android:id="@+id/bigStar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="@dimen/star_size"
+        android:layout_height="@dimen/star_size"
+        android:layout_marginTop="@dimen/star_margin"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_star_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/options"
-        android:textSize="50sp"
+        android:textSize="@dimen/app_name"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +34,12 @@
 
     <ImageButton
         android:id="@+id/heartSymbol"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/options_image_size"
+        android:layout_height="@dimen/options_image_size"
+        android:layout_marginTop="@dimen/options_image_margin"
         android:onClick="onClick"
         android:alpha="0.5"
+        android:contentDescription="@string/options_heart"
         android:background="@drawable/ic_favorite_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +47,12 @@
 
     <ImageButton
         android:id="@+id/flowerSymbol"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/options_image_size"
+        android:layout_height="@dimen/options_image_size"
+        android:layout_marginTop="@dimen/options_image_margin"
         android:onClick="onClick"
         android:alpha="0.5"
+        android:contentDescription="@string/options_flower"
         android:background="@drawable/ic_filter_vintage_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/heartSymbol"
@@ -57,24 +60,23 @@
 
     <ImageButton
         android:id="@+id/starSymbol"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/options_image_size"
+        android:layout_height="@dimen/options_image_size"
+        android:layout_marginTop="@dimen/options_image_margin"
         android:onClick="onClick"
         android:alpha="0.5"
+        android:contentDescription="@string/options_star"
         android:background="@drawable/ic_star_black_24dp"
         app:layout_constraintEnd_toStartOf="@id/heartSymbol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appNameText" />
 
-
     <Button
         android:id="@+id/ok"
         style="@style/ButtonMenu"
-        android:text="Select"
+        android:text="@string/options_button_select"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heartSymbol" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
