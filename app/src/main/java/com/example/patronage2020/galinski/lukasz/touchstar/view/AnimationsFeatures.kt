@@ -1,4 +1,4 @@
-package com.example.patronage2020.galinski.lukasz.touchstar
+package com.example.patronage2020.galinski.lukasz.touchstar.view
 
 import android.animation.Animator
 import android.view.View

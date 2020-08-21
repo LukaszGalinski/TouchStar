@@ -1,4 +1,4 @@
-package com.example.patronage2020.galinski.lukasz.touchstar
+package com.example.patronage2020.galinski.lukasz.touchstar.view
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
@@ -19,11 +19,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.animation.doOnEnd
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.example.patronage2020.galinski.lukasz.touchstar.database.DatabaseData
-import com.example.patronage2020.galinski.lukasz.touchstar.database.DatabaseHandler
-import kotlinx.android.synthetic.main.alertdialog_customview.view.*
-import kotlinx.android.synthetic.main.level_1.*
-import kotlinx.android.synthetic.main.namedialog_customview.view.*
+import com.example.patronage2020.galinski.lukasz.touchstar.R
+import com.example.patronage2020.galinski.lukasz.touchstar.model.ScoreModel
+import kotlinx.android.synthetic.main.exit_app_dialog_layout.view.*
+import kotlinx.android.synthetic.main.game_layout.*
+import kotlinx.android.synthetic.main.end_game_dialog_layout.view.*
 
 private const val GAME_START_CHARACTER_SHOWTIME = 1000L
 private const val BASIC_FALLING_DURATION = 4999L
@@ -58,7 +58,7 @@ private val textToShow = arrayOf("3", "2", "1", "START")
 class NewGame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.level_1)
+        setContentView(R.layout.game_layout)
         val startingGameShowText = 0
         backPressingCounter = 1
         stageSetUp(currentStage)
@@ -71,7 +71,6 @@ class NewGame : AppCompatActivity() {
         mainHandler.post(object : Runnable {
             override fun run() {
                 mainHandler.postDelayed(this, STAR_BASIC_SPAWN_TIME)
-
                 createObjectWithAnimation()
             }
         })
@@ -89,14 +88,19 @@ class NewGame : AppCompatActivity() {
                 switcher.setText(textToShow[textCountDown])
                 startGameCountDown(++textCountDown, context, switcher)
             }
-        }, GAME_START_CHARACTER_SHOWTIME)
+        },
+            GAME_START_CHARACTER_SHOWTIME
+        )
     }
 
     private fun createObjectWithAnimation() {
         val star = ImageButton(this)
-        star.background = ResourcesCompat.getDrawable(resources, currentSign, null)
-        star.scaleX = STAR_SIZE_SCALE
-        star.scaleY = STAR_SIZE_SCALE
+        star.background = ResourcesCompat.getDrawable(resources,
+            currentSign, null)
+        star.scaleX =
+            STAR_SIZE_SCALE
+        star.scaleY =
+            STAR_SIZE_SCALE
         star.z = -1f
         star.translationX = (deviceWidth * Math.random()).toFloat()
 
@@ -104,16 +108,27 @@ class NewGame : AppCompatActivity() {
         myDynamicLayout.addView(star)
         val animation = PropertyValuesHolder.ofFloat(animationName, deviceHeight.toFloat())
         val anim = ObjectAnimator.ofPropertyValuesHolder(star, animation)
-        anim.duration = fallingDuration
+        anim.duration =
+            fallingDuration
         anim.startDelay = delayDuration * Math.random().toLong()
         anim.doOnEnd {
-            if (!checkLivesLeft(currentLivesAmount, livesLeft)) {
-                stopTheGame(anim, switcher)
+            if (!checkLivesLeft(
+                    currentLivesAmount,
+                    livesLeft
+                )
+            ) {
+                stopTheGame(
+                    anim,
+                    switcher
+                )
                 destroyAnimations()
                 switcher.setText(resources.getText(R.string.game_over))
                 go_next.visibility = View.VISIBLE
                 go_next.setOnClickListener {
-                    endGameDialog(this, currentScore, currentStage)
+                    endGameDialog(this,
+                        currentScore,
+                        currentStage
+                    )
                     currentStage = 1
                 }
         } else {
@@ -123,16 +138,26 @@ class NewGame : AppCompatActivity() {
     }
 
         anim.start()
-        addAnimationToList(anim, star)
+        addAnimationToList(
+            anim,
+            star
+        )
         star.setOnClickListener {
             anim.removeAllListeners()
-            currentScore = addScore(currentScore, score)
+            currentScore =
+                addScore(
+                    currentScore,
+                    score
+                )
             star.visibility = View.GONE
             starsCounter++
         }
 
         if (starsCounter > STARS_AMOUNT) {
-            stopTheGame(anim, switcher)
+            stopTheGame(
+                anim,
+                switcher
+            )
             destroyAnimations()
             switcher.setText(resources.getText(R.string.level_finished))
             go_next.visibility = View.VISIBLE
@@ -141,7 +166,10 @@ class NewGame : AppCompatActivity() {
                     finish()
                     startActivity(Intent(this, NewGame::class.java))
                 }else{
-                    endGameDialog(this, currentScore, currentStage)
+                    endGameDialog(this,
+                        currentScore,
+                        currentStage
+                    )
                     currentStage = 1
                 }
             }
@@ -161,7 +189,7 @@ class NewGame : AppCompatActivity() {
         switcher.visibility = View.GONE
         pauseAnimations()
         val dialogView =
-            LayoutInflater.from(this).inflate(R.layout.alertdialog_customview, null)
+            LayoutInflater.from(this).inflate(R.layout.exit_app_dialog_layout, null)
         val builder = AlertDialog.Builder(this)
         builder.setView(dialogView)
         val alertDialog = builder.show()
@@ -184,22 +212,40 @@ class NewGame : AppCompatActivity() {
     private fun stageSetUp(stage: Int) {
         when (stage) {
             1 -> {
-                currentSign = getDefaultSymbol(this)
+                currentSign =
+                    getDefaultSymbol(
+                        this
+                    )
                 currentScore = 0
-                delayDuration = BASIC_DELAY_DURATION
-                fallingDuration = BASIC_FALLING_DURATION
-                currentLivesAmount = LIVES
+                delayDuration =
+                    BASIC_DELAY_DURATION
+                fallingDuration =
+                    BASIC_FALLING_DURATION
+                currentLivesAmount =
+                    LIVES
             }
             2 -> {
-                dynamicLayout.background = ContextCompat.getDrawable(this, R.drawable.egip)
-                view.setBackgroundColor(ContextCompat.getColor(this, R.color.level2_upper_bar))
-                bottomBar.setBackgroundColor(ContextCompat.getColor(this, R.color.level2_bottom_bar))
+                dynamicLayout.background = ContextCompat.getDrawable(this,
+                    R.drawable.egip
+                )
+                view.setBackgroundColor(ContextCompat.getColor(this,
+                    R.color.level2_upper_bar
+                ))
+                bottomBar.setBackgroundColor(ContextCompat.getColor(this,
+                    R.color.level2_bottom_bar
+                ))
 
             }
             3 -> {
-                dynamicLayout.background = ContextCompat.getDrawable(this, R.drawable.egipt)
-                view.setBackgroundColor(ContextCompat.getColor(this, R.color.level3_upper_bar))
-                bottomBar.setBackgroundColor(ContextCompat.getColor(this, R.color.level3_bottom_bar))
+                dynamicLayout.background = ContextCompat.getDrawable(this,
+                    R.drawable.egipt
+                )
+                view.setBackgroundColor(ContextCompat.getColor(this,
+                    R.color.level3_upper_bar
+                ))
+                bottomBar.setBackgroundColor(ContextCompat.getColor(this,
+                    R.color.level3_bottom_bar
+                ))
             }
         }
         starsCounter = 0
@@ -213,22 +259,23 @@ class NewGame : AppCompatActivity() {
     }
 
     private fun endGameDialog(context: Context, currentScore: Int, currentStage: Int) {
-        val dialogView = LayoutInflater.from(context).inflate(R.layout.namedialog_customview, null)
+        val dialogView = LayoutInflater.from(context).inflate(R.layout.end_game_dialog_layout, null)
         val builder = AlertDialog.Builder(context)
         builder.setView(dialogView)
         val alertDialog = builder.show()
         dialogView.button_save.setOnClickListener {
             val userName = dialogView.name_edtTxt.text.toString()
-            if (nameValidation(userName)) {
+            if (nameValidation(
+                    userName
+                )
+            ) {
                 val data =
-                    DatabaseData(
+                    ScoreModel(
                         userName,
                         currentScore.toLong(),
                         currentStage
                     )
-                DatabaseHandler(
-                    context
-                ).insertScore(data)
+                //DatabaseHandler(context).insertScore(data)
                 alertDialog.dismiss()
                 startActivity(Intent(context, MainMenu::class.java))
             } else {

@@ -1,20 +1,20 @@
-package com.example.patronage2020.galinski.lukasz.touchstar.mainmenu
+package com.example.patronage2020.galinski.lukasz.touchstar.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.patronage2020.galinski.lukasz.touchstar.R
-import com.example.patronage2020.galinski.lukasz.touchstar.changeDefaultSymbol
-import kotlinx.android.synthetic.main.options.*
+import kotlinx.android.synthetic.main.options_layout.*
 
 private const val INACTIVE_SYMBOL_ALPHA = 0.5F
 private const val BASIC_SYMBOL_ALPHA = 1F
 private const val BASIC_SYMBOL = "starSymbol"
-private var currentSign = BASIC_SYMBOL
+private var currentSign =
+    BASIC_SYMBOL
 class Options: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.options)
+        setContentView(R.layout.options_layout)
         ok.setOnClickListener {
             changeDefaultSymbol(
                 this,
