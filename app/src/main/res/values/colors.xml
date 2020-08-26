@@ -8,8 +8,11 @@
     <color name="barColor">#230E97</color>
     <color name="yellowColor">#CBE4D786</color>
     <color name="halfDark">#79000000</color>
+    <color name="darkTransparent">#4A000000</color>
     <color name="level2_bottom_bar">#CFB67E</color>
     <color name="level2_upper_bar">#1D343C</color>
     <color name="level3_upper_bar">#C18F53</color>
     <color name="level3_bottom_bar">#9A6331</color>
+
+    <color name="app_logo_background_color">#0E027E</color>
 </resources>

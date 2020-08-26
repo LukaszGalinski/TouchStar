@@ -1,83 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
     android:background="@drawable/kosmos">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".view.MainMenu">
-
-    <ImageView
-        android:id="@+id/bigStar"
-        android:layout_width="@dimen/star_size"
-        android:layout_height="@dimen/star_size"
-        android:layout_marginTop="@dimen/star_margin"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_star_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/appNameText"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="@dimen/app_page_title"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bigStar" />
+        tools:context=".view.MainMenuActivity">
 
-    <Button
-        android:id="@+id/newgame"
-        style="@style/ButtonMenu"
-        android:text="@string/new_game"
-        android:layout_marginTop="@dimen/button_star_distance"
-        android:onClick="menuOptionsListener"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appNameText"/>
+        <ImageView
+            android:id="@+id/bigStar"
+            android:layout_width="@dimen/star_size"
+            android:layout_height="@dimen/star_size"
+            android:layout_marginTop="@dimen/star_margin"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/touch_star_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/topScore"
-        style="@style/ButtonMenu"
-        android:text="@string/top_score"
-        android:onClick="menuOptionsListener"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/newgame" />
+        <Button
+            android:id="@+id/newgame"
+            style="@style/ButtonMenu"
+            android:layout_marginTop="@dimen/button_star_distance"
+            android:onClick="menuOptionsListener"
+            android:text="@string/new_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bigStar" />
 
-    <Button
-        android:id="@+id/options"
-        style="@style/ButtonMenu"
-        android:text="@string/options"
-        android:onClick="menuOptionsListener"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topScore" />
+        <Button
+            android:id="@+id/topScore"
+            style="@style/ButtonMenu"
+            android:onClick="menuOptionsListener"
+            android:text="@string/top_score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newgame" />
 
-    <Button
-        android:id="@+id/instruction"
-        style="@style/ButtonMenu"
-        android:text="@string/instructions"
-        android:onClick="menuOptionsListener"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/options" />
+        <Button
+            android:id="@+id/options"
+            style="@style/ButtonMenu"
+            android:onClick="menuOptionsListener"
+            android:text="@string/options"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topScore" />
 
-    <Button
-        android:id="@+id/exit"
-        style="@style/ButtonMenu"
-        android:text="@string/exit"
-        android:onClick="menuOptionsListener"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/instruction" />
+        <Button
+            android:id="@+id/instruction"
+            style="@style/ButtonMenu"
+            android:onClick="menuOptionsListener"
+            android:text="@string/instructions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/options" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/exit"
+            style="@style/ButtonMenu"
+            android:onClick="menuOptionsListener"
+            android:text="@string/exit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instruction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

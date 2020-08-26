@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.patronage2020.galinski.lukasz.touchstar">
+    package="com.galinski.lukasz.touchstar">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".view.MainMenu">
+        <activity android:name=".view.MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -20,7 +20,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="nosensor"
             android:configChanges="orientation|keyboardHidden|keyboard"/>
-        <activity android:name=".view.Instructions" />
+        <activity android:name=".view.InstructionsActivity" />
         <activity android:name=".view.Options" />
         <activity android:name=".view.ScoreBoardActivity" />
 

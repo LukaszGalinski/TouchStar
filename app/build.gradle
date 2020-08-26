@@ -8,7 +8,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.patronage2020.galinski.lukasz.touchstar"
+        applicationId "com.galinski.lukasz.touchstar"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1

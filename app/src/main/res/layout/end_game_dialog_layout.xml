@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kosmos">
+    android:background="@color/darkTransparent">
 
     <TextView
         android:id="@+id/info"
@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/button_save"
-        style="@style/ButtonMenu"
+        android:background="@drawable/menu_button"
         android:layout_width="@dimen/dialog_button_width"
         android:layout_height="@dimen/dialog_button_height"
         android:text="@string/save_score"

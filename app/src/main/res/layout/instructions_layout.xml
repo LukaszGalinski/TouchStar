@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainMenu"
+    tools:context=".view.MainMenuActivity"
     android:background="@drawable/kosmos">
 
     <ImageView
@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instructions"
+        android:textStyle="bold"
         android:textSize="@dimen/app_page_title"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +47,12 @@
 
     <Button
         android:id="@+id/ok"
-        style="@style/ButtonMenu"
+        android:layout_width="@dimen/dialog_button_width"
+        android:layout_height="@dimen/dialog_button_height"
+        android:background="@drawable/menu_button"
         android:text="@string/back"
+        android:textColor="@color/yellowColor"
+        android:layout_marginTop="@dimen/default_margin"
         android:onClick="menuOptionsListener"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

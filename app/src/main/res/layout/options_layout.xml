@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.Options"
-    android:background="@drawable/kosmos"
-    >
+    android:background="@drawable/kosmos">
 
     <ImageView
         android:id="@+id/bigStar"
@@ -19,7 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/appNameText"

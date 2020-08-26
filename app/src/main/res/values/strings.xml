@@ -35,4 +35,11 @@
     <string name="options_heart">Heart</string>
     <string name="options_star">Star</string>
     <string name="options_flower">Flower</string>
+
+    <string-array name="start_game_count_down">
+        <item name="count_3">3</item>
+        <item name="count_2">2</item>
+        <item name="count_1">1</item>
+        <item name="count_start">START</item>
+    </string-array>
 </resources>
