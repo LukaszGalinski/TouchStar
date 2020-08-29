@@ -5,13 +5,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidLine"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".05" />
-
     <TextView
         android:id="@+id/score_title"
         android:layout_width="wrap_content"
@@ -23,7 +16,7 @@
         android:textSize="@dimen/app_page_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidLine" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <GridLayout
         android:id="@+id/score_grid_labels"

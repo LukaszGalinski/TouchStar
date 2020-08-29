@@ -17,5 +17,4 @@ interface ScoreDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
         fun insertAll(scoreList: List<ScoreModel>)
-
 }

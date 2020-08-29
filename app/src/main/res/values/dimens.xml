@@ -2,7 +2,7 @@
 <resources>
     <dimen name="star_size">100dp</dimen>
     <dimen name="star_margin">50dp</dimen>
-    <dimen name="app_page_title">20sp</dimen>
+    <dimen name="app_page_title">23sp</dimen>
     <dimen name="button_star_distance">30dp</dimen>
 
     <dimen name="dialog_button_width">100dp</dimen>
@@ -13,8 +13,8 @@
     <dimen name="dialog_edit_text_height">50dp</dimen>
 
     <dimen name="basic_text_size">18sp</dimen>
-    <dimen name="basic_text_padding">20dp</dimen>
-    <dimen name="basic_text_margin">30dp</dimen>
+    <dimen name="basic_text_padding">10dp</dimen>
+    <dimen name="basic_text_margin">15dp</dimen>
 
     <dimen name="top_bar_height">60dp</dimen>
     <dimen name="top_bar_data_size">30sp</dimen>

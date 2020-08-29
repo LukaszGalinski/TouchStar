@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
+        app:layout_constraintGuide_percent=".1" />
 
     <TextView
         android:id="@+id/appNameText"
@@ -73,5 +73,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heartSymbol" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

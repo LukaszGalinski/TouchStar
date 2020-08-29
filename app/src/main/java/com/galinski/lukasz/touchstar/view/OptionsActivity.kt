@@ -20,7 +20,6 @@ class Options: AppCompatActivity() {
         setContentView(R.layout.options_layout)
         optionsViewModel = ViewModelProvider(this).get(OptionsViewModel::class.java)
         optionsViewModel.instance()
-
         ok.setOnClickListener {
             optionsViewModel.changeDefaultStarSymbol(this, currentSign)
             finish()

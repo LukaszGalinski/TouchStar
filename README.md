@@ -1,52 +1,24 @@
 # TouchStar
-Simple game created in Kotlin language. The goal of the game is to get highest score by pressing on falling objects.
+Simple game created in Kotlin language. First android application (game) created in Kotlin language. The main goal of the game is to get as much points as you can by pressing on falling down icons.
 "TouchStar" was made to pracitce:
-- Kotlin
-- SQLite
-- Animations
-- SharedPreferences
-- Switcher
-- Handlers
+- Kotlin		- SharedPreferences		- MVVM
+- SQLite		- Switcher			- Room
+- Animations		- Handlers			- RxKotlin
 
-Feb 27, 2020
-- Created application structure
-- added button style
-- created mainmenu and newgame layouts
-- created basic falling object animation
+To play the game, download the file from the link below: 
 
-Feb 28, 2020
-- added instructions
-- created user lives in the game
-- created logical rules
-- set stars spawn width/height depends on resolution
-- switcher added
-- added countdown before game starts
+![link](doc/TouchStar.apk) 
 
-Feb 29, 2020 
-- added options
-- added new appearances of the falling objects
-- added possibility to change look of falling object (SharedPreferences)
+and run it on your device. To play the game your phone has to work under Android system.
 
- Mar 1, 2020 
- - added alertDialog on back button press
- - added animations control
- 
- Mar 3, 2020
- - added SQLite database
- - changes in lives and score counting
- - added score listView
- 
- Mar 4, 2020 
- - added ListView custom adapter
- - added AlertDialog when all levels finished
- - added top score custom layout
- 
- Mar 5, 2020 
- - fix some bugs with score/lives wrong counting
- - combined stages into 1 activity
- 
- Mar 7-11, 2020 
- - visual corrections (levels backgrounds)
- - fixed setting wrong stage number into TextView
- - code cleanup
- - prototype finished with 3 game levels
+Game screens are placed below: 
+
+<p align="left">
+  <img src="doc/screenshots/new_game.jpg" width="320" height="600" title="main menu">
+  <img src="doc/screenshots/options.jpg" width="320" height="600" title="options">
+  <img src="doc/screenshots/introduction.jpg" width="320" height="600" title="instructions">
+  <img src="doc/screenshots/stage_2.jpg" width="320" height="600" title="stage">
+  <img src="doc/screenshots/the_game.jpg" width="320" height="600" title="the game">
+  <img src="doc/screenshots/score_board.jpg" width="320" height="600" title="score board">
+  <img src="doc/screenshots/count_down.jpg" width="320" height="600" title="count down">
+</p>

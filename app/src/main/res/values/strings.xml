@@ -36,6 +36,9 @@
     <string name="options_star">Star</string>
     <string name="options_flower">Flower</string>
 
+    <string name="data_loading">Loading score list&#8230;</string>
+    <string name="data_loading_done">Done!</string>
+
     <string-array name="start_game_count_down">
         <item name="count_3">3</item>
         <item name="count_2">2</item>

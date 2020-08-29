@@ -36,10 +36,10 @@ class SharedPreferencesRepository {
 
     private fun changeImageDependsOnLoadedData(sign: String?): Int {
         return when (sign) {
-            STAR_LABEL -> R.drawable.ic_star_black_24dp
-            HEART_LABEL -> R.drawable.ic_favorite_black_24dp
-            FLOWER_LABEL -> R.drawable.ic_filter_vintage_black_24dp
-            else -> R.drawable.ic_star_black_24dp
+            STAR_LABEL -> R.drawable.sign_star
+            HEART_LABEL -> R.drawable.sign_heart
+            FLOWER_LABEL -> R.drawable.sign_flower
+            else -> R.drawable.sign_star
         }
     }
 }

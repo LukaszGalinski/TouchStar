@@ -1,8 +1,9 @@
-package com.galinski.lukasz.touchstar.view
+package com.galinski.lukasz.touchstar.tools
 
 import android.animation.Animator
 import android.view.View
 import android.widget.*
+import com.galinski.lukasz.touchstar.view.mainHandler
 
 private val mAnimatorList: MutableList<Animator> = ArrayList()
 private val starList: MutableList<ImageButton> = ArrayList()

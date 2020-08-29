@@ -4,13 +4,13 @@
     android:id="@+id/dynamicLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/level_1">
 
     <View
         android:id="@+id/game_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_bar_height"
-        android:background="@drawable/bg"
+        android:background="@drawable/level_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
         android:contentDescription="@string/lives"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        android:src="@drawable/ic_favorite_black_24dp"
+        android:src="@drawable/sign_heart"
         app:layout_constraintStart_toStartOf="@+id/game_bar"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,7 +122,7 @@
         android:contentDescription="@string/switcher"
         android:scaleX="3"
         android:scaleY="3"
-        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:src="@drawable/arrow_right"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +132,7 @@
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_bar_height"
-        android:background="@drawable/bg"
+        android:background="@drawable/level_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

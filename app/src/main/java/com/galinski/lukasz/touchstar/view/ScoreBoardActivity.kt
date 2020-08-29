@@ -1,6 +1,8 @@
 package com.galinski.lukasz.touchstar.view
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,15 +36,37 @@ class ScoreBoardActivity : AppCompatActivity() {
     }
 
     private fun loadScoreList() {
+        showProgressBar()
+        showLoadingMessage()
         val scoreListObservable = Observable.fromCallable { scoreBoardViewModel.init(this) }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { scoreBoardViewModel.getScoreList()?.value!! }
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnComplete{
+                hideProgressBar()
+                showLoadingDoneMessage()
+            }
             .subscribe {
                 scoreAdapter.score = it
             }
         compositeDisposable.add(scoreListObservable)
+    }
+
+    private fun showProgressBar(){
+        progress_bar.visibility = View.VISIBLE
+    }
+
+    private fun hideProgressBar(){
+        progress_bar.visibility = View.GONE
+    }
+
+    private fun showLoadingMessage(){
+        Toast.makeText(this, resources.getString(R.string.data_loading), Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoadingDoneMessage(){
+        Toast.makeText(this, resources.getString(R.string.data_loading_done), Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {

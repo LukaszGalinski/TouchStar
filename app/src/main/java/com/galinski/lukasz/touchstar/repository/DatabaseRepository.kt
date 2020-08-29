@@ -4,6 +4,10 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.galinski.lukasz.touchstar.model.ScoreModel
 import com.galinski.lukasz.touchstar.repository.database.ScoreDatabase
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 
 class DatabaseRepository {
     private var instance: DatabaseRepository? = null
@@ -24,14 +28,15 @@ class DatabaseRepository {
         return dataSet
     }
 
-    fun insertScore(context: Context, scoreModel: ScoreModel){
-        ScoreDatabase.loadInstance(context).scoreDao().insertScore(scoreModel)
+    fun insertScore(context: Context, scoreModel: ScoreModel): Disposable{
+        return Observable.fromCallable { ScoreDatabase.loadInstance(context).scoreDao().insertScore(scoreModel) }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe()
     }
 
     private fun setGames(context: Context) {
         data = ArrayList()
-        data = ScoreDatabase.loadInstance(
-            context
-        ).scoreDao().getScoreList() as ArrayList<ScoreModel>
+        data = ScoreDatabase.loadInstance(context).scoreDao().getScoreList() as ArrayList<ScoreModel>
     }
 }

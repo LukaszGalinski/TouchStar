@@ -1,4 +1,4 @@
-package com.galinski.lukasz.touchstar.view
+package com.galinski.lukasz.touchstar.tools
 
 import android.widget.*
 
